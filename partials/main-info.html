@@ -1,0 +1,42 @@
+<div ng-if="!singleBlock || !singleTrans">
+  Loading results...
+</div>
+
+<div ng-if="search===singleBlock.hash">
+    <h1>Single Block Look-up</h1>
+    <p>
+      Hash: {{ singleBlock.hash }}<br/>
+      Version: {{ singleBlock.ver }}<br/>
+      Time: {{ singleBlock.time }}<br/>
+      Bit: {{ singleBlock.bit }}<br/>
+      Fee: {{ singleBlock.fee }}<br/>
+      Nonce: {{ singleBlock.nonce }}<br/>
+      n_tx: {{ singleBlock.n_tx }}<br/>
+      Size: {{ singleBlock.size }}<br/>
+      Block index: {{ singleBlock.block_index }}<br/>
+      Main Chain: {{ singleBlock.main_chain }}<br/>
+      Height: {{ singleBlock.height }}<br/>
+      Received Time: {{ singleBlock.received_time }}<br/>
+      Relayed By: {{ singleBlock.relayed_by }}<br/>
+  </p>
+</div>
+
+<div ng-if="search===singleTrans.tx_index">
+    <h1>Single Transaction Look-up</h1>
+    <p>
+      Hash: {{ singleTrans.hash }}<br/>
+      Version: {{ singleTrans.ver }}<br/>
+      V-in Size: {{ singleTrans.vin_sz }}<br/>
+      V-out Size: {{ singleTrans.vout_sz }}<br/>
+      Lock Time: {{ singleTrans.lock_time }}<br/>
+      Size: {{ singleTrans.size }}<br/>
+      Relayed By: {{ singleTrans.relayed_by }}<br/>
+      Block Height: {{ singleTrans.block_height }}<br/>
+      Transaction Index: {{ singleTrans.tx_index }}<br/>
+    </p>
+</div>
+
+
+<div ng-if="!singleBlock.hash || !singleTrans.tx_index">
+  No results found. Please check the input and try again.
+</div>
